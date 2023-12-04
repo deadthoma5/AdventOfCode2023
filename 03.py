@@ -14,7 +14,7 @@ for r, row in enumerate(grid):
         for match in edge & symbols.keys():
             symbols[match].append(int(num.group()))
 
-answer = sum(sum(p) for p in symbols.values())
+answer = sum(sum(v) for v in symbols.values())
 submit(answer, part="a", day=3, year=2023)
 
 answer = sum(math.prod(v) for k, v in symbols.items() if grid[k[0]][k[1]] == '*' and len(v)==2)
